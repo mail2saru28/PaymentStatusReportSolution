@@ -1,0 +1,8 @@
+C:\Users\sravaniy\Documents\Visual Studio 2015\Projects\PainReader\PainReader\bin\Debug\Reader.exe.config
+C:\Users\sravaniy\Documents\Visual Studio 2015\Projects\PainReader\PainReader\bin\Debug\Reader.exe
+C:\Users\sravaniy\Documents\Visual Studio 2015\Projects\PainReader\PainReader\bin\Debug\Reader.pdb
+C:\Users\sravaniy\Documents\Visual Studio 2015\Projects\PainReader\PainReader\bin\Debug\PaymentStatusReport.dll
+C:\Users\sravaniy\Documents\Visual Studio 2015\Projects\PainReader\PainReader\bin\Debug\PaymentStatusReport.pdb
+C:\Users\sravaniy\Documents\Visual Studio 2015\Projects\PainReader\PainReader\obj\Debug\Reader.csprojResolveAssemblyReference.cache
+C:\Users\sravaniy\Documents\Visual Studio 2015\Projects\PainReader\PainReader\obj\Debug\Reader.exe
+C:\Users\sravaniy\Documents\Visual Studio 2015\Projects\PainReader\PainReader\obj\Debug\Reader.pdb

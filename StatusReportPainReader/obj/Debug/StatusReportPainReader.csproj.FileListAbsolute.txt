@@ -1,0 +1,5 @@
+c:\users\sravaniy\documents\visual studio 2015\Projects\PainReader\StatusReportPainReader\bin\Debug\StatusReportPainReader.dll
+c:\users\sravaniy\documents\visual studio 2015\Projects\PainReader\StatusReportPainReader\bin\Debug\StatusReportPainReader.pdb
+c:\users\sravaniy\documents\visual studio 2015\Projects\PainReader\StatusReportPainReader\obj\Debug\StatusReportPainReader.csprojResolveAssemblyReference.cache
+c:\users\sravaniy\documents\visual studio 2015\Projects\PainReader\StatusReportPainReader\obj\Debug\StatusReportPainReader.dll
+c:\users\sravaniy\documents\visual studio 2015\Projects\PainReader\StatusReportPainReader\obj\Debug\StatusReportPainReader.pdb

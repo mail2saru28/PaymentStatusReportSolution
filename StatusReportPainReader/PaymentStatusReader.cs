@@ -1,6 +1,4 @@
-﻿
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -14,57 +12,54 @@ namespace PaymentStatusReport
 {
     public class PaymentStatusReader
     {
-
-
         public List<PaymentStatusInfo> GetPaymentStatusInfo(string targetDirectory)
         {
-
-            List<PaymentStatusInfo> lstPaymentStatusInfo = new List<PaymentStatusInfo>();
-            //targetDirectory = @"C:\docs\folder\";
+            List<PaymentStatusInfo> paymentStatusInfoList = new List<PaymentStatusInfo>();
             try
             {
                 string[] files = Directory.GetFiles(targetDirectory, "pain.002.001.03*.xml ");
-
                 if (files.Count() > 0)
                 {
                     foreach (string fileName in files)
                     {
-                        if (string.IsNullOrEmpty(fileName)) throw new ArgumentNullException(nameof(fileName));
-                        if (!File.Exists(fileName)) throw new FileNotFoundException("Input file not found", fileName);
-
-                        Document doc = null;
-                        using (Stream reader = new FileStream(fileName, FileMode.Open))
+                        try
                         {
-                            var serializer = new XmlSerializer(typeof(Document));
-                            doc = (Document)serializer.Deserialize(reader);
-                            var paymentStatusInfo = new PaymentStatusInfo();
-                            paymentStatusInfo = GetPaymentStatusReport(doc, fileName);
-                            lstPaymentStatusInfo.Add(paymentStatusInfo);
+                            if (string.IsNullOrEmpty(fileName)) throw new ArgumentNullException(nameof(fileName));
+                            if (!File.Exists(fileName)) throw new FileNotFoundException("Input file not found", fileName);
 
+                            Document doc = null;
+                            using (Stream reader = new FileStream(fileName, FileMode.Open))
+                            {
+                                var serializer = new XmlSerializer(typeof(Document));
+                                doc = (Document)serializer.Deserialize(reader);
+                                var paymentStatusInfo = new PaymentStatusInfo();
+                                paymentStatusInfo = GetPaymentStatusReport(doc, fileName);
+                                paymentStatusInfoList.Add(paymentStatusInfo);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            SaveLogFile(MethodBase.GetCurrentMethod(), ex);
                         }
                     }
-
                 }
             }
             catch (Exception ex)
             {
                 SaveLogFile(MethodBase.GetCurrentMethod(), ex);
             }
-            return lstPaymentStatusInfo;
+            return paymentStatusInfoList;
         }
         private PaymentStatusInfo GetPaymentStatusReport(Document document, string fileName)
         {
-
             PaymentStatusInfo statusReport = new PaymentStatusInfo();
             try
             {
                 var originalGrpInfoAndSts = document.CstmrPmtStsRpt.OrgnlGrpInfAndSts;
                 List<string> groupStatusReason = new List<string>();
                 statusReport.FileName = fileName;
-
                 statusReport.GroupStatus = GetStatusType(originalGrpInfoAndSts.GrpSts.ToString());
                 var groupStatusInfo = originalGrpInfoAndSts.StsRsnInf;
-
                 if (groupStatusInfo != null)
                 {
                     foreach (var groupStatus in groupStatusInfo)
@@ -145,7 +140,7 @@ namespace PaymentStatusReport
                                         var amount = (ActiveOrHistoricCurrencyAndAmount)orgnlTxRefAmt;
                                         transactionItem.Amount = amount.Value;
                                     }
-                                    #region Creditor Account And Agent
+                                    #region Creditor Account And Agent Info
                                     transactionItem.CreditorAccount = new Account();
                                     transactionItem.CreditorAccount.Name = txnInfo.OrgnlTxRef.Cdtr?.Nm;
                                     if (txnInfo.OrgnlTxRef.CdtrAcct != null)
@@ -174,7 +169,7 @@ namespace PaymentStatusReport
                                     }
                                     #endregion
 
-                                    #region Debitor Account And Agent
+                                    #region Debitor Account And Agent Info
                                     transactionItem.DebitorAccount = new Account();
                                     transactionItem.DebitorAccount.Name = txnInfo.OrgnlTxRef.Dbtr?.Nm;
                                     var dbtrAccountInfo = txnInfo.OrgnlTxRef.DbtrAcct?.Id;
@@ -224,11 +219,8 @@ namespace PaymentStatusReport
                     break;
                 default:
                     break;
-
-
             }
             return status;
-
         }
         private string GetEnumDescription(StatusTypeEnum value)
         {
@@ -241,14 +233,12 @@ namespace PaymentStatusReport
             else
                 return value.ToString();
         }
-
         private void SaveLogFile(object method, Exception exception)
         {
             string startupPath = System.IO.Directory.GetCurrentDirectory();
             string projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             string folderName = Path.Combine(projectPath, "ErrorLog");
             System.IO.Directory.CreateDirectory(folderName);
-
             try
             {
                 //Opens a new file stream which allows asynchronous reading and writing

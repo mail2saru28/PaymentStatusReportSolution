@@ -49,18 +49,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PaymentTransactionClasses\Account.cs" />
-    <Compile Include="PaymentTransactionClasses\Agent.cs" />
-    <Compile Include="PaymentTransactionClasses\PaymentTranasction.cs" />
+    <Compile Include="Domain\Account.cs" />
+    <Compile Include="Domain\Agent.cs" />
+    <Compile Include="Domain\PaymentTranasction.cs" />
     <Compile Include="PaymentStatusReader.cs" />
     <Compile Include="Pain.002.001.003.Schema\pain_002_001_03.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PaymentTransactionClasses\PaymentStatusInfo.cs" />
-    <Compile Include="PaymentTransactionClasses\StatusTypeEnum.cs" />
-    <Compile Include="PaymentTransactionClasses\TransactionItem.cs" />
+    <Compile Include="Domain\PaymentStatusInfo.cs" />
+    <Compile Include="Domain\StatusTypeEnum.cs" />
+    <Compile Include="Domain\TransactionItem.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="Pain.002.001.003.Schema\pain.002.001.03.xsd">
       <SubType>Designer</SubType>
     </None>

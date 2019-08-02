@@ -1,0 +1,10 @@
+c:\users\sravaniy\documents\visual studio 2015\Projects\PainReader\PainReader\bin\Debug\PainReader.exe.config
+c:\users\sravaniy\documents\visual studio 2015\Projects\PainReader\PainReader\bin\Debug\PainReader.exe
+c:\users\sravaniy\documents\visual studio 2015\Projects\PainReader\PainReader\bin\Debug\PainReader.pdb
+c:\users\sravaniy\documents\visual studio 2015\Projects\PainReader\PainReader\obj\Debug\PainReader.csprojResolveAssemblyReference.cache
+c:\users\sravaniy\documents\visual studio 2015\Projects\PainReader\PainReader\obj\Debug\PainReader.exe
+c:\users\sravaniy\documents\visual studio 2015\Projects\PainReader\PainReader\obj\Debug\PainReader.pdb
+C:\Users\sravaniy\documents\visual studio 2015\Projects\PainReader\PainReader\bin\Debug\PaymentStatusReport.dll
+C:\Users\sravaniy\documents\visual studio 2015\Projects\PainReader\PainReader\bin\Debug\PaymentStatusReport.pdb
+C:\Users\sravaniy\documents\visual studio 2015\Projects\PainReader\PainReader\bin\Debug\log4net.dll
+C:\Users\sravaniy\documents\visual studio 2015\Projects\PainReader\PainReader\bin\Debug\log4net.xml
