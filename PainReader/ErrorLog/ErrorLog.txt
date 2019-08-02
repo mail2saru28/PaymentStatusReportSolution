@@ -1,0 +1,5 @@
+02-08-2019 (15:01) - Method: System.Collections.Generic.List`1[PaymentStatusReport.PaymentStatusInfo] GetPaymentStatusInfo(System.String)
+System.IO.FileNotFoundException: Input file not found
+File name: 'C:\docs\folder\pain.02.001.03.xml'
+   at PaymentStatusReport.PaymentStatusReader.GetPaymentStatusInfo(String targetDirectory) in C:\Users\sravaniy\Documents\Visual Studio 2015\Projects\PainReader\StatusReportPainReader\PaymentStatusReader.cs:line 33
+
